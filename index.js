@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 
 const secret = crypto.randomBytes(64).toString('hex');
-console.log(secret);
+
 
 app.use(cors());
 app.use(express.json());
