@@ -2,7 +2,7 @@ import Job from "../models/Job.js";
 
 export const createJob = async (req, res) => {
   try {
-    const employerId = req.user.id; // From JWT token
+    const employerId = req.user.id; 
     const { title, description } = req.body;
 
     const job = await Job.create({ title, description, employerId });
