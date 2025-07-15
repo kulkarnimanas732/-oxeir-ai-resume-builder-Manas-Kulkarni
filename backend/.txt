@@ -1,0 +1,27 @@
+token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzQ5MTExOTA3NmJmNWVmMzJjODBjYSIsImlhdCI6MTc1MjQ2OTc3NywiZXhwIjoxNzUyNDczMzc3fQ.Zg6IaZP4mhmhAus9MmyqRW2-nWOblFA-IaoMauAnlos
+
+
+
+
+posts/jobs 
+  title: Frontend Developer
+  description: "React.js role
+
+
+POST /applicants
+
+ jobId: <,
+  applicantName: Alice,
+  email: alice@example.com,
+  phone: 9999999999,
+  resumeLink: https://resume.example.com/alice,
+  skillScore: 85
+
+
+
+POST /hires
+
+Authorization: Bearer <your_token>
+
+  jobId: <same_job_id>
+  applicantId": "<applicant_id>
