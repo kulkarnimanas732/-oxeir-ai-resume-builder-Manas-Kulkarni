@@ -8,14 +8,21 @@ import crypto from 'crypto';
 import jobRoutes from "./routes/Job.js";
 import applicantRoutes from "./routes/applicant.js";
 import hireRoutes from "./routes/hire.js";
+<<<<<<< HEAD
+=======
 import path from 'path';
 
+>>>>>>> 05092c1 (inital commit)
 
 dotenv.config();
 const app = express();
 
 const secret = crypto.randomBytes(64).toString('hex');
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 05092c1 (inital commit)
 app.use(cors());
 app.use(express.json());
 
@@ -31,7 +38,11 @@ app.use("/api/employer", statsRoute);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/applicants", applicantRoutes);
 app.use("/api/hires", hireRoutes);
+<<<<<<< HEAD
+
+=======
 app.use('/uploads', express.static(path.join(path.resolve(), 'uploads')));
+>>>>>>> 05092c1 (inital commit)
 app.get("/", (req, res) => {
   res.send(" Employer Stats API is running");
 });

@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import Applicant from "../models/Applicant.js";
+
+export const createApplicant = async (req, res) => {
+  try {
+    const { jobId, applicantName, skillScore } = req.body;
+
+    const applicant = await Applicant.create({
+      jobId,
+      applicantName,
+      skillScore,
+=======
 import fs from "fs";
 import path from "path";
 import pdf from "pdf-parse";
@@ -30,6 +42,7 @@ export const createApplicant = async (req, res) => {
       education,
       resumeLink: req.file.filename,
       skillScore
+>>>>>>> 05092c1 (inital commit)
     });
 
     res.status(201).json({ msg: "Applicant added", applicant });
