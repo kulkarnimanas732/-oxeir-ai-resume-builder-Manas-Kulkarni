@@ -8,6 +8,8 @@ import crypto from 'crypto';
 import jobRoutes from "./routes/Job.js";
 import applicantRoutes from "./routes/applicant.js";
 import hireRoutes from "./routes/hire.js";
+import path from 'path';
+
 
 dotenv.config();
 const app = express();
@@ -29,7 +31,7 @@ app.use("/api/employer", statsRoute);
 app.use("/api/jobs", jobRoutes);
 app.use("/api/applicants", applicantRoutes);
 app.use("/api/hires", hireRoutes);
-
+app.use('/uploads', express.static(path.join(path.resolve(), 'uploads')));
 app.get("/", (req, res) => {
   res.send(" Employer Stats API is running");
 });

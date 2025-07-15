@@ -1,15 +1,4 @@
-// // utils/pdfParser.js
-// import { Readable } from "stream";
-// import pdf from "pdf-parse";
 
-// export const extractTextFromPDFBuffer = async (buffer) => {
-//   try {
-//     const data = await pdf(buffer);
-//     return data.text;
-//   } catch (err) {
-//     throw new Error("Error parsing PDF");
-//   }
-// };
 import { Readable } from "stream";
 import { MongoClient, GridFSBucket } from "mongodb";
 
