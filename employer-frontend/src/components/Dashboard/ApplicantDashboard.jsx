@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { Briefcase, LogOut, X } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -66,7 +68,7 @@ const ApplicantDashboard = () => {
       if (response.ok) {
         setSelectedJob(null);
         setApplicationForm({ education: '', phone: '', resume: null });
-        fetchApplications(); // ✅ Refresh applications after apply
+        fetchApplications(); // Refresh after applying
       }
     } catch (err) {
       console.error('Error applying:', err);
@@ -125,27 +127,24 @@ const ApplicantDashboard = () => {
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-6">My Applications</h2>
             <div className="space-y-4">
-              
               {applications.map((app, index) => (
-  <div key={index} className="bg-white rounded-lg shadow-md p-4">
-    <h3 className="font-medium text-gray-900">{app.jobTitle}</h3>
-    <p className="text-sm text-gray-500">
-      Applied: {new Date(app.appliedDate).toLocaleDateString()}
-    </p>
-    <p className="text-sm text-gray-500">Score: {app.skillScore}</p>
-
-    {app.isHired ? (
-      <span className="inline-block mt-2 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
-        ✅ Hired
-      </span>
-    ) : (
-      <span className="inline-block mt-2 bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
-        ⏳ Pending
-      </span>
-    )}
-  </div>
-))}
-
+                <div key={index} className="bg-white rounded-lg shadow-md p-4">
+                  <h3 className="font-medium text-gray-900">{app.jobTitle}</h3>
+                  <p className="text-sm text-gray-500">
+                    Applied: {new Date(app.appliedDate).toLocaleDateString()}
+                  </p>
+                  <p className="text-sm text-gray-500">Score: {app.skillScore}</p>
+                  {app.isHired ? (
+                    <span className="inline-block mt-2 bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">
+                      ✅ Hired
+                    </span>
+                  ) : (
+                    <span className="inline-block mt-2 bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
+                      ⏳ Pending
+                    </span>
+                  )}
+                </div>
+              ))}
               {applications.length === 0 && (
                 <p className="text-gray-500 text-center py-8">No applications yet</p>
               )}
@@ -175,7 +174,9 @@ const ApplicantDashboard = () => {
                 <input
                   type="text"
                   value={applicationForm.education}
-                  onChange={(e) => setApplicationForm({ ...applicationForm, education: e.target.value })}
+                  onChange={(e) =>
+                    setApplicationForm({ ...applicationForm, education: e.target.value })
+                  }
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="e.g., B.Tech in Computer Science"
@@ -187,7 +188,9 @@ const ApplicantDashboard = () => {
                 <input
                   type="tel"
                   value={applicationForm.phone}
-                  onChange={(e) => setApplicationForm({ ...applicationForm, phone: e.target.value })}
+                  onChange={(e) =>
+                    setApplicationForm({ ...applicationForm, phone: e.target.value })
+                  }
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Your phone number"
@@ -199,7 +202,9 @@ const ApplicantDashboard = () => {
                 <input
                   type="file"
                   accept=".pdf"
-                  onChange={(e) => setApplicationForm({ ...applicationForm, resume: e.target.files[0] })}
+                  onChange={(e) =>
+                    setApplicationForm({ ...applicationForm, resume: e.target.files[0] })
+                  }
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -230,4 +235,5 @@ const ApplicantDashboard = () => {
 };
 
 export default ApplicantDashboard;
+
 
