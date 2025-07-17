@@ -17,8 +17,8 @@ const Login = () => {
 
     try {
       const endpoint = isEmployer
-        ? isLogin ? '/employer/login' : '/employer/register'
-        : isLogin ? '/employer/applicant/login' : '/employer/applicant/register';
+        ? isLogin ? '/api/employer/login' : '/api/employer/register'
+        : isLogin ? '/api/employer/applicant/login' : '/api/employer/applicant/register';
 
       const payload = isLogin
         ? { email: formData.email, password: formData.password }
