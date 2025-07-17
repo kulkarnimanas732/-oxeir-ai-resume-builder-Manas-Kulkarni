@@ -1,4 +1,5 @@
-const API_BASE = 'http://localhost:5000/api';
+// // Use your deployed backend URL instead of localhost
+const API_BASE = 'https://oxeir-ai-resume-builder-manas-kulkarni-1.onrender.com/';
 
 export const apiCall = async (endpoint, options = {}) => {
   const token = localStorage.getItem('token');
